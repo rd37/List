@@ -14,18 +14,20 @@ function initialize(){
 		try{
 			var msgdiv=document.createTextNode("entry "+i);
 			//msgdiv.innerHTML="entry "+i;
-			if(i%6==0)
+			if(i%7==0)
 				divelem.htmldiv.innerHTML=getentrytype1();
-			if(i%6==1)
+			if(i%7==1)
 				divelem.htmldiv.innerHTML=getentrytype2();
-			if(i%6==2)
+			if(i%7==2)
 				divelem.htmldiv.innerHTML=getentrytype3();
-			if(i%6==3)
+			if(i%7==3)
 				divelem.htmldiv.innerHTML=getentrytype4(i);
-			if(i%6==4)
+			if(i%7==4)
 				divelem.htmldiv.innerHTML=getentrytype5(i);
-			if(i%6==5)
+			if(i%7==5)
 				divelem.htmldiv.innerHTML=getentrytype6(i);
+			if(i%7==6)
+				divelem.htmldiv.innerHTML=getentrytype7(i);
 			firstlist.adddivelement(divelem);
 			//alert("height "+divelem.htmldiv.childNodes.item(0).style.top);
 			//console.log(i+"height2 "+divelem.htmldiv.style.height);
@@ -40,9 +42,14 @@ function initialize(){
 	//console.log(i+" style height "+document.getElementById("list0").style.height+" in px");
 	firstlist.showlist();
 }
+function getentrytype7(index){
+	//console.log("retrun movie");
+	var html="<embed wmode='transparent' width='120px' height='50px' src='movies/hackershardcopy.mp4' autostart='true' /><font size='1'>no hard copy</font>";
+	return html;
+}
 function getentrytype4(index){
 	//console.log("retrun movie");
-	var html=index+": crayola books?:<embed width='140px' height='60px' src='movies/hackers.mp4' autostart='true' />";
+	var html="crayola books<embed wmode='transparent' width='140px' height='60px' src='movies/hackers.mp4' autostart='true' />";
 	return html;
 }
 function getentrytype5(index){
@@ -54,7 +61,7 @@ function getentrytype5(index){
 }
 function getentrytype6(index){
 	//console.log("retrun movie");
-	var html=index+":<embed width='80px' height='60px' src='movies/helloyakit.mp4' autostart='true' /> very nice!";
+	var html=index+":<embed wmode='transparent'  width='80px' height='60px' src='movies/helloyakit.mp4' autostart='true' /> very nice!";
 	return html;
 }
 function getentrytype1(){

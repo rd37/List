@@ -57,6 +57,7 @@ function addshowlist(listret){
 					listret.divelements[i].htmldiv.style.visibility="visible";
 					listret.divelements[i].htmldiv.style.display="block";
 					listret.divelements[i].htmldiv.style.top=(0)+"px";
+					//listret.divelements[i].htmldiv.style.height="10px";
 				}else if((listret.visiblepixels+listret.startpixelindex+listret.yoffset)<(nextdivelementpixelstart+listret.divelements[i].listelemheight) && (listret.visiblepixels+listret.startpixelindex+listret.yoffset)>nextdivelementpixelstart){
 					listret.divelements[i].htmldiv.style.zIndex=998;
 					listret.divelements[i-1].htmldiv.style.zIndex=999;
