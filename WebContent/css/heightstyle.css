@@ -1,0 +1,20 @@
+@CHARSET "ISO-8859-1";
+* { 
+    padding: 0; 
+    margin: 0; 
+} 
+ 
+.rootdivclass { 
+    background: #4c5462; 
+    border: 1px solid #000000; 
+    text-align: left;         
+}
+
+.innerdivclass { 
+    background: #ff0000; 
+    border: 1px solid #000000; 
+    text-align: left;         
+} 
+ 
+
+ 
