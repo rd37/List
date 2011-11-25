@@ -14,16 +14,18 @@ function initialize(){
 		try{
 			var msgdiv=document.createTextNode("entry "+i);
 			//msgdiv.innerHTML="entry "+i;
-			if(i%5==0)
+			if(i%6==0)
 				divelem.htmldiv.innerHTML=getentrytype1();
-			if(i%5==1)
+			if(i%6==1)
 				divelem.htmldiv.innerHTML=getentrytype2();
-			if(i%5==2)
+			if(i%6==2)
 				divelem.htmldiv.innerHTML=getentrytype3();
-			if(i%5==3)
+			if(i%6==3)
 				divelem.htmldiv.innerHTML=getentrytype4(i);
-			if(i%5==4)
+			if(i%6==4)
 				divelem.htmldiv.innerHTML=getentrytype5(i);
+			if(i%6==5)
+				divelem.htmldiv.innerHTML=getentrytype6(i);
 			firstlist.adddivelement(divelem);
 			//alert("height "+divelem.htmldiv.childNodes.item(0).style.top);
 			//console.log(i+"height2 "+divelem.htmldiv.style.height);
@@ -38,15 +40,19 @@ function initialize(){
 	//console.log(i+" style height "+document.getElementById("list0").style.height+" in px");
 	firstlist.showlist();
 }
-
+function getentrytype4(index){
+	//console.log("retrun movie");
+	var html=index+": crayola books?:<embed width='140px' height='60px' src='movies/hackers.mp4' autostart='true' />";
+	return html;
+}
 function getentrytype5(index){
 	var html="<table><tr>";
 	html+="<tr><td><font size='2'>"+index+":get esso gas station attendant to scan this from your mobile phone</font></td></tr>";
-	html+="<tr><td><img width='60%' height='60%' src='http://crazy-tattoo-designs.com/bar_code_tattoos.png'/></td></tr>";
+	html+="<tr><td><img width='100px' height='50px' src='http://crazy-tattoo-designs.com/bar_code_tattoos.png'/></td></tr>";
 	html+="</tr></html>";
 	return html;
 }
-function getentrytype4(index){
+function getentrytype6(index){
 	//console.log("retrun movie");
 	var html=index+":<embed width='80px' height='60px' src='movies/helloyakit.mp4' autostart='true' /> very nice!";
 	return html;
