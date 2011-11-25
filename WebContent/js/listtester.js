@@ -14,12 +14,14 @@ function initialize(){
 		try{
 			var msgdiv=document.createTextNode("entry "+i);
 			//msgdiv.innerHTML="entry "+i;
-			if(i%3==0)
+			if(i%4==0)
 				divelem.htmldiv.innerHTML=getentrytype1();
-			if(i%3==1)
+			if(i%4==1)
 				divelem.htmldiv.innerHTML=getentrytype2();
-			if(i%3==2)
+			if(i%4==2)
 				divelem.htmldiv.innerHTML=getentrytype3();
+			if(i%4==3)
+				divelem.htmldiv.innerHTML=getentrytype4(i);
 			firstlist.adddivelement(divelem);
 			//alert("height "+divelem.htmldiv.childNodes.item(0).style.top);
 			//console.log(i+"height2 "+divelem.htmldiv.style.height);
@@ -34,7 +36,11 @@ function initialize(){
 	//console.log(i+" style height "+document.getElementById("list0").style.height+" in px");
 	firstlist.showlist();
 }
-
+function getentrytype4(index){
+	//console.log("retrun movie");
+	var html=index+"<embed width='80px' height='60px' src='movies/helloyakit.mp4' autostart='true' /> very nice!";
+	return html;
+}
 function getentrytype1(){
 	var html="<table><tr>";
 	html+="<td><img src='images/robot_sm.jpg' width='20px' height='20px'/></td>";
