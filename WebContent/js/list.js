@@ -38,7 +38,7 @@ function addshowlist(listret){
 		if(listret.updated==true){
 			listret.calculatedivelementpixellocations();
 			listret.updated=false;
-			console.log("update the element pixel locations");
+			//console.log("update the element pixel locations");
 		}
 		var currlistheight=0;
 		var currlistwidth=0;
@@ -102,7 +102,7 @@ function addlistmouseevents(firstlist){
 			//console.log("yoff "+firstlist.yoffset+", STRTINDEX: "+firstlist.startpixelindex+":: total "+total);
 			firstlist.showlist();
 		}else{
-			console.log("list div mouse must be up "+firstlist.state);
+			//console.log("list div mouse must be up "+firstlist.state);
 		}
 	};
 	firstlist.roothtmldivelement.onmousedown=function(event){
@@ -113,17 +113,17 @@ function addlistmouseevents(firstlist){
 		//console.log("mouse down start pixel index "+firstlist.startpixelindex+"x "+firstlist.xdown+" y "+firstlist.ydown);
 	};
 	firstlist.clickoccurred=function(divid){
-		console.log("div item was click from "+divid);
+		//console.log("div item was click from "+divid);
 	};
 	
 	firstlist.roothtmldivelement.onmouseup=function(event){
-		console.log("mouse up last startpixel index "+firstlist.startpixelindex);
+		//console.log("mouse up last startpixel index "+firstlist.startpixelindex);
 		firstlist.state=0;
 		firstlist.xdown=0;
 		firstlist.ydown=0;
 		firstlist.startpixelindex+=firstlist.yoffset;
 		
-		console.log("mouse up new startpixel index "+firstlist.startpixelindex+" offsety was "+firstlist.yoffset);
+		//console.log("mouse up new startpixel index "+firstlist.startpixelindex+" offsety was "+firstlist.yoffset);
 		firstlist.yoffset=0;
 	};
 	
@@ -152,7 +152,7 @@ function list(visible,orientation){
 			//console.log("offset height total is  div item i "+i+" height is "+totalheight);
 			this.divelements[i].listpixellocation=totalheight;
 			this.divelements[i].listelemheight=this.divelements[i].htmldiv.offsetHeight;
-			totalheight+=this.divelements[i].htmldiv.offsetHeight;
+			totalheight+=this.divelements[i].htmldiv.offsetHeight-1;
 			this.divelements[i].htmldiv.style.display="none";
 		}
 		this.totalheight=totalheight;

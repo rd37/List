@@ -31,7 +31,7 @@ function initialize(){
 	}
 	//alert("show list");
 	document.getElementById("list0").appendChild(firstlist.roothtmldivelement);
-	console.log(i+" style height "+document.getElementById("list0").style.height+" in px");
+	//console.log(i+" style height "+document.getElementById("list0").style.height+" in px");
 	firstlist.showlist();
 }
 
