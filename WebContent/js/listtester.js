@@ -8,26 +8,30 @@ function initialize(){
 	var firstlist = listfcty.createlist(258,"verticle");
 	listmgr.addlist(firstlist);
 	
-	for(var i=0;i<25;i++){
+	for(var i=0;i<15;i++){
 		var divelem = listfcty.createdivelement(firstlist);
 	
 		try{
 			var msgdiv=document.createTextNode("entry "+i);
 			//msgdiv.innerHTML="entry "+i;
-			if(i%7==0)
+			if(i%9==0)
 				divelem.htmldiv.innerHTML=getentrytype1();
-			if(i%7==1)
+			if(i%9==1)
 				divelem.htmldiv.innerHTML=getentrytype2();
-			if(i%7==2)
+			if(i%9==2)
 				divelem.htmldiv.innerHTML=getentrytype3();
-			if(i%7==3)
+			if(i%9==3)
 				divelem.htmldiv.innerHTML=getentrytype4(i);
-			if(i%7==4)
+			if(i%9==4)
 				divelem.htmldiv.innerHTML=getentrytype5(i);
-			if(i%7==5)
+			if(i%9==5)
 				divelem.htmldiv.innerHTML=getentrytype6(i);
-			if(i%7==6)
+			if(i%9==6)
 				divelem.htmldiv.innerHTML=getentrytype7(i);
+			if(i%9==7)
+				divelem.htmldiv.innerHTML=getentrytype8(i);
+			if(i%9==8)
+				divelem.htmldiv.innerHTML=getentrytype9(i);
 			firstlist.adddivelement(divelem);
 			//alert("height "+divelem.htmldiv.childNodes.item(0).style.top);
 			//console.log(i+"height2 "+divelem.htmldiv.style.height);
@@ -39,8 +43,22 @@ function initialize(){
 	}
 	//alert("show list");
 	document.getElementById("list0").appendChild(firstlist.roothtmldivelement);
+	document.getElementById("list0").appendChild(firstlist.sliderhtmldivelement);
 	//console.log(i+" style height "+document.getElementById("list0").style.height+" in px");
 	firstlist.showlist();
+}
+function getentrytype9(index){
+	//console.log("retrun movie");
+	var html="<embed wmode='transparent' width='120px' height='50px' src='movies/skatersceen.mp4' autostart='true' /><font size='1'>we rule!</font>";
+	return html;
+}
+function getentrytype8(){
+	var html="<table><tr>";
+	html+="<td><font size='4'><a href='http://www.skates.com/Rollerblade-Parts-s/246780.htm'><font size='1'>yes, ron has rollerblades!they are for sale and he is near you now!</font></a></font></td>";
+	html+="<td><img src='images/ronsskates.jpg' width='100px' height='50px'/></td>";
+	html+="</tr><tr><td> <table><tr><td><a href='http://www.facebook.com/people/Ron-Desmarais/601411080'><img alt='rons facebook page' width='25px' height='25px' src='images/facebookicon.jpg' /></a></td><td><a href='http://yakit.ca'><img alt='rons present location'  width='25px' height='25px' src='images/mapimg.jpg' /></a></td></tr></table> </td>";
+	html+="</tr></html>";
+	return html;
 }
 function getentrytype7(index){
 	//console.log("retrun movie");
@@ -49,7 +67,7 @@ function getentrytype7(index){
 }
 function getentrytype4(index){
 	//console.log("retrun movie");
-	var html="crayola books<embed wmode='transparent' width='140px' height='60px' src='movies/hackers.mp4' autostart='true' />";
+	var html="crayola books<embed wmode='transparent' width='110px' height='60px' src='movies/hackers.mp4' autostart='true' />";
 	return html;
 }
 function getentrytype5(index){
