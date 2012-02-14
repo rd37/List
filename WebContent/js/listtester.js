@@ -5,8 +5,10 @@ function initialize(){
 	var listmgr = new listmanager();
 	var listfcty = new listfactory();
 	
-	var firstlist = listfcty.createlist(258,"verticle");
+	var firstlist = listfcty.createlist(258,300,"verticle");
 	listmgr.addlist(firstlist);
+	var secondlist = listfcty.createlist(500,300,"horizontal");
+	listmgr.addlist(secondlist);
 	
 	for(var i=0;i<15;i++){
 		var divelem = listfcty.createdivelement(firstlist);
@@ -33,6 +35,7 @@ function initialize(){
 			if(i%9==8)
 				divelem.htmldiv.innerHTML=getentrytype9(i);
 			firstlist.adddivelement(divelem);
+			//secondlist.adddivelement(divelem);
 			//alert("height "+divelem.htmldiv.childNodes.item(0).style.top);
 			//console.log(i+"height2 "+divelem.htmldiv.style.height);
 			//console.dir(firstlist);
@@ -41,10 +44,66 @@ function initialize(){
 		}
 		//divelem.htmldiv.style.height=20;
 	}
-	//alert("show list");
-	document.getElementById("list0").appendChild(firstlist.roothtmldivelement);
-	document.getElementById("list0").appendChild(firstlist.sliderhtmldivelement);
+	
+	//
+	
+	//document.getElementById("list0").appendChild(firstlist.sliderhtmldivelement);
+	//firstlist.showlist();
+	//document.getElementById("list0").removeChild(firstlist.sliderhtmldivelement);
+	
+	for(var i=0;i<5;i++){
+		var divelem = listfcty.createdivelement(secondlist);
+	
+		try{
+			var msgdiv=document.createTextNode("entry "+i);
+			//msgdiv.innerHTML="entry "+i;
+			if(i%9==4){
+				//secondlist.adddivelement(divelem);
+				divelem.htmldiv.innerHTML=getentrytype1();
+			}if(i%9==1)
+				divelem.htmldiv.innerHTML=getentrytype2();
+			if(i%9==2)
+				divelem.htmldiv.innerHTML=getentrytype3();
+			if(i%9==3)
+				divelem.htmldiv.innerHTML=getentrytype4(i);
+			if(i%9==0){
+				//var divelem = listfcty.createdivelement(secondlist);
+				//divelem.htmldiv.appendChild(firstlist.maindivelement);
+				//divelem.htmldiv.innerHTML=getentrytype5(i);
+				divelem.htmldiv=firstlist.maindivelement;
+			}
+			if(i%9==5)
+				divelem.htmldiv.innerHTML=getentrytype6(i);
+			if(i%9==6)
+				divelem.htmldiv.innerHTML=getentrytype7(i);
+			if(i%9==7)
+				divelem.htmldiv.innerHTML=getentrytype8(i);
+			if(i%9==8)
+				divelem.htmldiv.innerHTML=getentrytype9(i);
+			secondlist.adddivelement(divelem);
+			//secondlist.adddivelement(divelem);
+			//alert("height "+divelem.htmldiv.childNodes.item(0).style.top);
+			//console.log(i+"height2 "+divelem.htmldiv.style.height);
+			//console.dir(firstlist);
+		}catch(exception){
+			alert("Dom Exception Occurred "+exception);
+		}
+		//divelem.htmldiv.style.height=20;
+	}
+	
+	var divelem2 = listfcty.createdivelement(secondlist);
+	divelem2.htmldiv.innerHTML="hello there";
+	secondlist.adddivelement(divelem2);
+	
+	//secondlist.adddivelement(firstlist.maindivelement);
+	//alert("show list");.maindivelement
+	//document.getElementById("list0").appendChild(firstlist.roothtmldivelement);
+	//document.getElementById("list0").appendChild(firstlist.sliderhtmldivelement);
+	//document.getElementById("list0").appendChild(firstlist.maindivelement);
+	//document.getElementById("list1").appendChild(secondlist.roothtmldivelement);
+	document.getElementById("list1").appendChild(secondlist.maindivelement);
 	//console.log(i+" style height "+document.getElementById("list0").style.height+" in px");
+	secondlist.showlist();
 	firstlist.showlist();
 }
 function getentrytype9(index){
